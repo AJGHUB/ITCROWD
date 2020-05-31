@@ -32,4 +32,4 @@ Back End
    password
    set up mongoose model with fields for user
 
-5) Authentication
+5) Authentication . 
