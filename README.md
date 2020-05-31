@@ -8,8 +8,8 @@ Installs:
 Build Order
 Back End
    
-  http://localhost:5000 to postman to check server is up and running.
- Connect database to mongo atlas db string or URI > copied string from mongo atlas project
+   http://localhost:5000 to postman to check server is up and running.
+   Connect database to mongo atlas db string or URI > copied string from mongo atlas project
    put mongo URI string in default.json
    Connect in Mongoose connections to DB in db.js
 
