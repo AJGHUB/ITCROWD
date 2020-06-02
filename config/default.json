@@ -1,5 +1,6 @@
 {
-    "mongoURI": "mongodb+srv://alice123:jowsey123@developerconnector-va98f.mongodb.net/test?retryWrites=true&w=majority"
+    "mongoURI": "mongodb+srv://alice123:jowsey123@developerconnector-va98f.mongodb.net/test?retryWrites=true&w=majority",
+    "jwtSecret": "mysecrettoken"
 }
 
 //default global dependencies from devdep in pkg json config here I put global dependencies with default values 
