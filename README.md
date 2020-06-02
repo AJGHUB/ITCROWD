@@ -35,4 +35,5 @@ Back End
    set up mongoose model with fields for user
 
  5. Registation Route to register users/ Implement express validator for email clean response feedback
+   using postman and mongo atlas to read if user is registered 
 
