@@ -34,4 +34,5 @@ Back End
    password
    set up mongoose model with fields for user
 
- Authentication . 
+ 5. Registation Route to register users/ Implement express validator for email clean response feedback
+
