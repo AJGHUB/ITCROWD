@@ -10,6 +10,8 @@ Installs:
 1. Regular dependencies: npm i express express-validator bcryptjs config gravatar jsonwebtoken mongoose request
 2. Dev dependencies: nmp i -D nodemon concurrently
 
+terminal use this one in development 'npm run server'
+
 Build Order
 Back End
 
@@ -38,4 +40,9 @@ Connect in Mongoose connections to DB in db.js
 
 6. User ID payload: Implement JWT > jwt package is installed. User is created hash the password | save user in db | get payload with user id | sign token | pass in payload | pass in the secret & give expiration | inside call back we get error or token if we get token then token is sent to client |
 
-7. Create custom middleware to verify token when its sent back to server
+7. Create custom middleware to verify jsn tokenthat comes in from client when its sent back to server
+8. Log in users already in database in routes api we are validating user.
+
+Authentication for back end is complete: Register, Log In, Get token, Protect routes. 
+
+9. PROFILE model routes fields: 
