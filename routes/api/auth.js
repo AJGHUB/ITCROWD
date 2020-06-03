@@ -9,6 +9,7 @@ const User = require('../../models/User')
 router.get('/', auth, async (req, res) => {
     try {
         const user = await User.findById(req.user.id).select('-password');
+        console.log(req.user.id);
         res.json(user);
     } catch (err) {
         console.error(err.message);
@@ -20,4 +21,3 @@ router.get('/', auth, async (req, res) => {
 
 module.exports = router;
 
-//eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VyIjp7ImlkIjoiNWVkNjAwN2IyMWYwMDQ1ZTg0MDJjM2JhIn0sImlhdCI6MTU5MTA4MzEzMSwiZXhwIjoxNTkxNDQzMTMxfQ.UJAG5tc9TAZy_1sShqRc2h9Bcvug8TFf0dMmb_FAknI
