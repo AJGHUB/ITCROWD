@@ -46,4 +46,5 @@ Connect in Mongoose connections to DB in db.js
 Authentication for back end is complete: Register, Log In, Get token, Protect routes. 
 
 9. PROFILE model routes fields: with all the relevant fields 
-10. 
+10. Get current user profile 
+11. create & Update Profile Routes

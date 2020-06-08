@@ -12,12 +12,12 @@ const User = require('../../models/User');
 router.get('/me', auth, async (req, res) => {
     try {
         const profile = await Profile.findOne({
-            user: req.user.id,
-        })
-        .populate(
-            'user',
-            ['name', 'avatar']
-        );
+                user: req.user.id,
+            })
+            .populate(
+                'user',
+                ['name', 'avatar']
+            );
 
         if (!profile) {
             return res.status(400).json({
@@ -30,7 +30,6 @@ router.get('/me', auth, async (req, res) => {
         console.error(err.message);
         res.status(500).send('Server Error');
     }
- }
-);
+});
 
 module.exports = router;
