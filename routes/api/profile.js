@@ -75,7 +75,7 @@ router.post('/', [auth, [
 
         //build Profile Object
         const profileFields = {};
-        profileFields.user = req.user.id;
+        profileFields.user = req.user.id; 
         if (company) profileFields.company = company;
         if (website) profileFields.website = website;
         if (location) profileFields.location = location;
@@ -101,7 +101,7 @@ router.post('/', [auth, [
             });
 
             if (profile) {
-                // Update
+                // Update Profile
                 profile = await Profile.findOneAndUpdate({
                     user: req.user.id
                 }, {
@@ -122,22 +122,20 @@ router.post('/', [auth, [
             console.error(err.message);
             res.status(500).send('Server Error');
         }
-    }
-);
+        console.log(profileFields.skills);
+        res.send('hello');
+    } 
+); 
 
-// @route   Get api/profile
-// @desc    Get all profiles
-// @access  Public
-
+    // @route   Get api/profile
+    // @desc    Get all profiles
+    //  @access  Public
 router.get('/', async (req, res) => {
     try {
-        const profile = await Profile.findOne({
-                user: req.params.user_id
-            })
-            .populate('user', ['name', 'avatar']);
-            res,json(profile);
+        const profiles = await Profile.find().populate('user', [ 'name', 'avatar']);
+        res.json(profiles);      
     } catch (err) {
-        console.error(err.message);
+        console.error (err.message);
         res.status(500).send('Server Error');
     }
 })
