@@ -47,4 +47,5 @@ Authentication for back end is complete: Register, Log In, Get token, Protect ro
 
 9. PROFILE model routes fields: with all the relevant fields 
 10. Get current user profile 
-11. create & Update Profile Routes
+11. create & Update Profile Routes in profile.js
+12.
