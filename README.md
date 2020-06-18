@@ -48,3 +48,4 @@ In pkg json Add: "client": "npm start --prefix client",
 to run front and back then terminal> npm run dev
 
 In client Installed: npm i axios react-router-dom redux react-redux redux-thunk redux-devtools-extension moment react-moment
+Removed files logo | service worker |css
