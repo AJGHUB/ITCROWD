@@ -39,4 +39,12 @@ Connect in Mongoose connections to DB in db.js
 
 9. PROFILE API model routes fields: with all the relevant fields
    Get/Create/Update/Get all/Delete
-10. Post API Routes > Create/Add/Get/Delete/Post/Like-Unlike/Add remove comment
+10. Post API Routes > Create/Add/Get/Delete/Post/Like-Unlike/Add remove comment.
+
+FRONT END
+
+In pkg json Add: "client": "npm start --prefix client",
+"dev": "concurrently \"npm run server\" \"npm run client\""  
+to run front and back then terminal> npm run dev
+
+In client Installed: npm i axios react-router-dom redux react-redux redux-thunk redux-devtools-extension moment react-moment
