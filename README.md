@@ -49,3 +49,4 @@ to run front and back then terminal> npm run dev
 
 In client Installed: npm i axios react-router-dom redux react-redux redux-thunk redux-devtools-extension moment react-moment
 Removed files logo | service worker |css
+ 1. Front End Start: React & concurrently set up with. Clean up of components. React router set up. Register Form and use state hook. Request example and login Form. 
