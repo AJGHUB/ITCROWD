@@ -7,7 +7,7 @@ Postman
 
 Installs:
 
-1. Regular dependencies: npm i express express-validator bcryptjs config gravatar jsonwebtoken mongoose request
+1. Regular dependencies: npm i express express-validator bcryptjs config gravatar jsonwebtoken mongoose request uuid
 2. Dev dependencies: nmp i -D nodemon concurrently
 
 terminal use this one in development 'npm run server'

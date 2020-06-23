@@ -10,18 +10,19 @@ import store from './store';
 
 import './App.css';
 
-const App = () => 
-    <Provider store={store}>
-        <Router>
-            <Fragment>
-            <Navbar/>
-            <Route exact path="/" component={Landing} />
-                <Switch>
-                    <Route exact path="/register" component={Register} />
-                    <Route exact path="/login" component={Login} />
-                </Switch>
-            </Fragment>
-        </Router>
-    </Provider>
+const App = () => (
+  <Provider store={store}>
+    <Router>
+      <Fragment>
+        <Navbar />
+        <Route exact path='/' component={Landing} />
+        <Switch>
+          <Route exact path='/register' component={Register} />
+          <Route exact path='/login' component={Login} />
+        </Switch>
+      </Fragment>
+    </Router>
+  </Provider>
+);
 
 export default App;
