@@ -11,19 +11,19 @@ const {
 
 const User = require('../../models/User')
 
-// @route   GET api/users
+// @route   POST api/users
 // @desc    Register User > name email and password 
 // @access  Public (no token needed)
-router.post(
-    '/',
+router.post('/',
     [
         check('name', 'Name is required')
         .not()
         .isEmpty(),
         check('email', 'Please include a valid email')
         .isEmail(),
-        check('password', 'Please enter a password with 6 or more characters')
-        .isLength({
+        check('password', 
+        'Please enter a password with 6 or more characters'
+        ).isLength({
             min: 6
         })
     ],
