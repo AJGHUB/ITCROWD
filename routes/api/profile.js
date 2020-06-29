@@ -12,7 +12,7 @@ const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 
 //______________________________________________________________________
-// @route   GET api/profile
+// @route   GET api/profile/me
 // @desc    Get current users profile 
 // @access  Private
 
