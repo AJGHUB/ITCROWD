@@ -2,7 +2,7 @@
 
 AJowsey Notes:
 See github.com/bradtraversy/devconnector_2.0 for update information
-Mongo DB Atlas https://cloud.mongodb.com/v2/5ed32eea3721a97a5646d908#clusters
+Mongo DB Atlas https://cloud.mongodb.com/v2/5ed32eea3721a97a5646d908#clusters > 12345alcattraz@gmail.com 
 Postman
 
 Installs:
