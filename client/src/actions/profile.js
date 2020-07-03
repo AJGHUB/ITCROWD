@@ -64,6 +64,7 @@ export const AddExperience = (formData, history) => async (dispatch) => {
         'Content-Type': 'application/json',
       },
     };
+
     const res = await axios.put('api/profile/experience', formData, config);
 
     dispatch({
@@ -86,6 +87,7 @@ export const AddExperience = (formData, history) => async (dispatch) => {
     });
   }
 };
+
 //Add Education
 export const AddEducation = (formData, history) => async (dispatch) => {
   try {
