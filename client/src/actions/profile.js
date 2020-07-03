@@ -57,7 +57,7 @@ export const createProfile = (formData, history, edit = false) => async (
 };
 
 //Add Experience
-export const AddExperience = (formData, history) => async (dispatch) => {
+export const addExperience = (formData, history) => async dispatch => {
   try {
     const config = {
       headers: {
@@ -73,6 +73,7 @@ export const AddExperience = (formData, history) => async (dispatch) => {
     });
 
     dispatch(setAlert('Experience Added', 'success'));
+
     history.push('/dashboard');
   } catch (err) {
     const errors = err.response.data.errors;
