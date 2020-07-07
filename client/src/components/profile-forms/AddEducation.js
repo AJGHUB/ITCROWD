@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addEducation } from '../../actions/profile';
@@ -16,9 +16,15 @@ const AddEducation = ({ addEducation, history }) => {
     description: '',
   });
 
-  const [toDateDisabled, toggleDisabled] = useState(false);
-
-  const { school, degree, fieldofstudy, from, to, current, description } = formData;
+  const { 
+    school, 
+    degree, 
+    fieldofstudy, 
+    from, 
+    to, 
+    current, 
+    description 
+  } = formData;
 
   const onChange = e =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
@@ -42,7 +48,7 @@ const AddEducation = ({ addEducation, history }) => {
             placeholder='* School or Bootcamp'
             name='school'
             value={school}
-            onChange={(e) => onChange(e)}
+            onChange={e => onChange(e)}
             required
           />
         </div>
@@ -52,7 +58,7 @@ const AddEducation = ({ addEducation, history }) => {
             placeholder='* Degree or Certificate'
             name='degree'
             value={degree}
-            onChange={(e) => onChange(e)}
+            onChange={e => onChange(e)}
             required
           />
         </div>
@@ -62,7 +68,7 @@ const AddEducation = ({ addEducation, history }) => {
             placeholder='Field of Study'
             name='fieldofstudy'
             value={fieldofstudy}
-            onChange={(e) => onChange(e)}
+            onChange={e => onChange(e)}
           />
         </div>
         <div className='form-group'>
@@ -71,7 +77,7 @@ const AddEducation = ({ addEducation, history }) => {
             type='date'
             name='from'
             value={from}
-            onChange={(e) => onChange(e)}
+            onChange={e => onChange(e)}
           />
         </div>
         <div className='form-group'>
@@ -81,7 +87,7 @@ const AddEducation = ({ addEducation, history }) => {
               name='current'
               checked={current}
               value={current}
-              onChange={(e) => {
+              onChange={() => {
                 setFormData({ ...formData, current: !current });
                 toggleDisabled(!toDateDisabled);
               }}
@@ -95,7 +101,7 @@ const AddEducation = ({ addEducation, history }) => {
             type='date'
             name='to'
             value={to}
-            onChange={(e) => onChange(e)}
+            onChange={e => onChange(e)}
             disabled={toDateDisabled ? 'disabled' : ''}
           />
         </div>
@@ -124,4 +130,4 @@ AddEducation.propTypes = {
 
 export default connect(
     null,
-     { addEducation })(AddEducation);
+    { addEducation })(AddEducation);
