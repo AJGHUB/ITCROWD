@@ -17,7 +17,7 @@
 //         ;
 //       </td>
 //       <td>
-//         <button classsName='btn btn-danger'>Delete</button>
+//         <button className='btn btn-danger'>Delete</button>
 //       </td>
 //     </td>
 //   ));

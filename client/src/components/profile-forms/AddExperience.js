@@ -16,7 +16,7 @@ const AddExperience = ({ addExperience, history }) => {
     description: ''
   });
 
-  // const [toDateDisabled, toggleDisabled] = useState(false);
+  const [toDateDisabled, toggleDisabled] = useState(false);
 
   const { company, title, location, from, to, current, description } = formData;
 
