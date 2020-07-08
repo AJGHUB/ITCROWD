@@ -10,7 +10,10 @@ Installs:
 1. Regular dependencies: npm i express express-validator bcryptjs config gravatar jsonwebtoken mongoose request uuid
 2. Dev dependencies: nmp i -D nodemon concurrently
 
+use 'nmp run dev' to run concurrently  back and front
+
 terminal use this one in development 'npm run server'
+
 
 Build Order
 Back End
