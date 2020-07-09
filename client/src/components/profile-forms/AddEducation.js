@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addEducation } from '../../actions/profile';
 
-
 const AddEducation = ({ addEducation, history }) => {
   const [formData, setFormData] = useState({
     school: '',
@@ -18,39 +17,41 @@ const AddEducation = ({ addEducation, history }) => {
 
   const [toDateDisabled, toggleDisabled] = useState(false);
 
-  const { 
-    school, 
-    degree, 
-    fieldofstudy, 
-    from, 
-    to, 
-    current, 
-    description 
+  const {
+    school,
+    degree,
+    fieldofstudy,
+    from,
+    to,
+    current,
+    description,
   } = formData;
 
-  const onChange = e =>
+  const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
     <Fragment>
       <h1 className='large text-primary'>Add Your Education</h1>
       <p className='lead'>
-        <i className='fas fa-code-branch'></i> Add any school or bootcamp that you have attended
+        <i className='fas fa-code-branch'></i> Add any school or bootcamp that
+        you have attended
       </p>
       <small>* = required field</small>
-      <form 
-      className='form' 
-      onSubmit={e => {
+      <form
+        className='form'
+        onSubmit={(e) => {
           e.preventDefault();
           addEducation(formData, history);
-      }}>
+        }}
+      >
         <div className='form-group'>
           <input
             type='text'
             placeholder='* School or Bootcamp'
             name='school'
             value={school}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
             required
           />
         </div>
@@ -60,7 +61,7 @@ const AddEducation = ({ addEducation, history }) => {
             placeholder='* Degree or Certificate'
             name='degree'
             value={degree}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
             required
           />
         </div>
@@ -70,7 +71,7 @@ const AddEducation = ({ addEducation, history }) => {
             placeholder='Field of Study'
             name='fieldofstudy'
             value={fieldofstudy}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
           />
         </div>
         <div className='form-group'>
@@ -79,7 +80,7 @@ const AddEducation = ({ addEducation, history }) => {
             type='date'
             name='from'
             value={from}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
           />
         </div>
         <div className='form-group'>
@@ -94,7 +95,7 @@ const AddEducation = ({ addEducation, history }) => {
                 toggleDisabled(!toDateDisabled);
               }}
             />{' '}
-            Current Job
+            Current School
           </p>
         </div>
         <div className='form-group'>
@@ -103,7 +104,7 @@ const AddEducation = ({ addEducation, history }) => {
             type='date'
             name='to'
             value={to}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
             disabled={toDateDisabled ? 'disabled' : ''}
           />
         </div>
@@ -114,7 +115,7 @@ const AddEducation = ({ addEducation, history }) => {
             rows='5'
             placeholder='Program Description'
             value={description}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
           ></textarea>
         </div>
         <input type='submit' className='btn btn-primary my-1' />
@@ -129,6 +130,5 @@ const AddEducation = ({ addEducation, history }) => {
 AddEducation.propTypes = {
   addEducation: PropTypes.func.isRequired,
 };
-
 
 export default connect(null, { addEducation })(withRouter(AddEducation));
