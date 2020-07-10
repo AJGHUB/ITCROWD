@@ -8,7 +8,7 @@ import {
   UPDATE_PROFILE,
   CLEAR_PROFILE,
   ACCOUNT_DELETED,
-  GET_REPOS
+  GET_REPOS,
 } from './types';
 
 //Get current users profile________________________________________________________
@@ -198,6 +198,7 @@ export const deleteAccount = (id) => async (dispatch) => {
 //Get all profiles
 export const getProfiles = () => async (dispatch) => {
   dispatch({ type: CLEAR_PROFILE });
+
   try {
     const res = await axios.get('/api/profile');
 
@@ -214,7 +215,7 @@ export const getProfiles = () => async (dispatch) => {
 };
 
 //Get Github Repo's - route on back end returns data as well
-export const getGithubRepo = () => async (dispatch) => {
+export const getGithubRepos = (username) => async (dispatch) => {
   try {
     const res = await axios.get(`/api/profile/github/${username}`);
 
@@ -230,9 +231,8 @@ export const getGithubRepo = () => async (dispatch) => {
   }
 };
 
-
 //Get profiles by id
-export const getProfilesById = userId => async (dispatch) => {
+export const getProfilesById = (userId) => async (dispatch) => {
   try {
     const res = await axios.get(`/api/profile/user/${userId}`);
 
