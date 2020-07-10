@@ -1,9 +1,8 @@
 import React, { Fragment, useState } from 'react';
-import { withRouter} from 'react-router-dom'; //Link
+import { withRouter } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addExperience } from '../../actions/profile';
-
 
 const AddExperience = ({ addExperience, history }) => {
   const [formData, setFormData] = useState({
@@ -13,14 +12,14 @@ const AddExperience = ({ addExperience, history }) => {
     from: '',
     to: '',
     current: false,
-    description: ''
+    description: '',
   });
 
   const [toDateDisabled, toggleDisabled] = useState(false);
 
   const { company, title, location, from, to, current, description } = formData;
 
-  const onChange = e =>
+  const onChange = (e) =>
     setFormData({ ...formData, [e.target.name]: e.target.value });
 
   return (
@@ -31,12 +30,13 @@ const AddExperience = ({ addExperience, history }) => {
         positions that you have had in the past
       </p>
       <small>* = required field</small>
-      <form 
-      className='form' 
-      onSubmit={e => {
+      <form
+        className='form'
+        onSubmit={(e) => {
           e.preventDefault();
           addExperience(formData, history);
-      }}>
+        }}
+      >
         <div className='form-group'>
           <input
             type='text'
@@ -107,7 +107,7 @@ const AddExperience = ({ addExperience, history }) => {
             rows='5'
             placeholder='Job Description'
             value={description}
-            onChange={e => onChange(e)}
+            onChange={(e) => onChange(e)}
           ></textarea>
         </div>
         <input type='submit' className='btn btn-primary my-1' />
@@ -124,4 +124,3 @@ AddExperience.propTypes = {
 };
 
 export default connect(null, { addExperience })(withRouter(AddExperience));
-
