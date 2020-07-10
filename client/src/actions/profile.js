@@ -233,6 +233,7 @@ export const getGithubRepos = (username) => async (dispatch) => {
 
 //Get profiles by id
 export const getProfilesById = (userId) => async (dispatch) => {
+  // dispatch({ type: CLEAR_PROFILE });
   try {
     const res = await axios.get(`/api/profile/user/${userId}`);
 
