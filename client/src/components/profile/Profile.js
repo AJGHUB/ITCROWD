@@ -58,7 +58,7 @@ const Profile = ({
               {profile.education.length > 0 ? (
                 <Fragment>
                   {profile.education.map((education) => (
-                    <ProfileExperience
+                    <ProfileEducation
                       key={education._id}
                       education={education}
                     />
