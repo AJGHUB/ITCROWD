@@ -59,5 +59,3 @@ const mapStateToProps = (state) => ({
 });
 
 export default connect(mapStateToProps, { getGithubRepos })(ProfileGithub);
-
-//6fd3c81e73588ff99d32986633c162fed21800ae  githubtoken
