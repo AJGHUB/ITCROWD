@@ -16,6 +16,7 @@ import Profile from './components/profile/Profile';
 import PrivateRoute from './components/routing/PrivateRoute';
 import Posts from './components/posts/Posts';
 
+
 //Redux
 import { Provider } from 'react-redux';
 import store from './store';
