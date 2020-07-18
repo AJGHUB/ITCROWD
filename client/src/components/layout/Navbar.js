@@ -46,7 +46,7 @@ export const Navbar = ({ auth: { isAuthenticated, loading }, logout }) => {
     <nav className='navbar bg-dark'>
       <h1>
         <Link to='/index'>
-          <i className='fas fa-code'></i> DevConnector
+          <i className='fas fa-code'></i> The IT Crowd
         </Link>
       </h1>
       {!loading && (
