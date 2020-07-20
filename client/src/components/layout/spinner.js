@@ -1,5 +1,5 @@
 import React, { Fragment } from 'react';
-import spinner from './spinner.gif'; //DO YOU MEAN CHANGE THIS TO CAPITALS WILL??
+import spinner from './spinner.gif';
 
 export default () => (
   <Fragment>
