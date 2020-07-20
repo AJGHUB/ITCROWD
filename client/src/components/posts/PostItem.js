@@ -29,14 +29,15 @@ const PostItem = ({
       {showActions && (
         <Fragment>
           <button
-            onClick={(e) => addLike(_id)}
+            onClick={() => addLike(_id)}
             type='button'
             className='btn btn-light'
           >
-            <i className='fas fa-thumbs-up' /> <span>{likes.length}</span>
+            <i className='fas fa-thumbs-up' />{' '}
+            <span>{likes.length > 0 && <span>{likes.length}</span>}</span>
           </button>
           <button
-            onClick={(e) => removeLike(_id)}
+            onClick={() => removeLike(_id)}
             type='button'
             className='btn btn-light'
           >
@@ -64,8 +65,8 @@ const PostItem = ({
 );
 
 PostItem.defaultProps = {
-  showActions: true
-}
+  showActions: true,
+};
 
 PostItem.propTypes = {
   post: PropTypes.object.isRequired,
@@ -73,6 +74,7 @@ PostItem.propTypes = {
   addLike: PropTypes.func.isRequired,
   removeLike: PropTypes.func.isRequired,
   deletePost: PropTypes.func.isRequired,
+  showActions: PropTypes.bool,
 };
 
 const mapStateToProps = (state) => ({
