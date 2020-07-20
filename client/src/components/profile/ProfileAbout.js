@@ -25,7 +25,7 @@ const ProfileAbout = ({
       ))}
     </div>
   </div>
-); //TODO I add more of these for different skills Ruby etc..?
+);
 
 ProfileAbout.propTypes = {
   profile: PropTypes.object.isRequired,
