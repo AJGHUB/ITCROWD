@@ -1,5 +1,5 @@
 import React, { Fragment, useState } from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { addExperience } from '../../actions/profile';
@@ -14,8 +14,6 @@ const AddExperience = ({ addExperience, history }) => {
     current: false,
     description: '',
   });
-
-  const [toDateDisabled, toggleDisabled] = useState(false);
 
   const { company, title, location, from, to, current, description } = formData;
 
@@ -43,7 +41,7 @@ const AddExperience = ({ addExperience, history }) => {
             placeholder='* Job Title'
             name='title'
             value={title}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             required
           />
         </div>
@@ -53,7 +51,7 @@ const AddExperience = ({ addExperience, history }) => {
             placeholder='* Company'
             name='company'
             value={company}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
             required
           />
         </div>
@@ -63,17 +61,12 @@ const AddExperience = ({ addExperience, history }) => {
             placeholder='Location'
             name='location'
             value={location}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
           />
         </div>
         <div className='form-group'>
           <h4>From Date</h4>
-          <input
-            type='date'
-            name='from'
-            value={from}
-            onChange={(e) => onChange(e)}
-          />
+          <input type='date' name='from' value={from} onChange={onChange} />
         </div>
         <div className='form-group'>
           <p>
@@ -84,7 +77,6 @@ const AddExperience = ({ addExperience, history }) => {
               value={current}
               onChange={() => {
                 setFormData({ ...formData, current: !current });
-                toggleDisabled(!toDateDisabled);
               }}
             />{' '}
             Current Job
@@ -96,8 +88,8 @@ const AddExperience = ({ addExperience, history }) => {
             type='date'
             name='to'
             value={to}
-            onChange={(e) => onChange(e)}
-            disabled={toDateDisabled ? 'disabled' : ''}
+            onChange={onChange}
+            disabled={current}
           />
         </div>
         <div className='form-group'>
@@ -107,7 +99,7 @@ const AddExperience = ({ addExperience, history }) => {
             rows='5'
             placeholder='Job Description'
             value={description}
-            onChange={(e) => onChange(e)}
+            onChange={onChange}
           ></textarea>
         </div>
         <input type='submit' className='btn btn-primary my-1' />
@@ -123,4 +115,4 @@ AddExperience.propTypes = {
   addExperience: PropTypes.func.isRequired,
 };
 
-export default connect(null, { addExperience })(withRouter(AddExperience));
+export default connect(null, { addExperience })(AddExperience);
