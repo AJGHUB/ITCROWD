@@ -54,7 +54,7 @@ export const addLike = (id) => async (dispatch) => {
 //Remove like________________________________________________________________________________
 export const removeLike = (id) => async (dispatch) => {
   try {
-    const res = await api.get(`/posts/unlike/${id}`);
+    const res = await api.put(`/posts/unlike/${id}`);
 
     dispatch({
       type: UPDATE_LIKES,
@@ -74,7 +74,7 @@ export const removeLike = (id) => async (dispatch) => {
 // Delete post________________________________________________________________________________
 export const deletePost = (id) => async (dispatch) => {
   try {
-    const res = await api.delete(`/posts/${id}`);
+    await api.delete(`/posts/${id}`);
 
     dispatch({
       type: DELETE_POST,
@@ -95,12 +95,6 @@ export const deletePost = (id) => async (dispatch) => {
 
 // Add post_____________________________________________________________________________________
 export const addPost = (formData) => async (dispatch) => {
-  const config = {
-    headers: {
-      'Content-Type': 'application/json',
-    },
-  };
-
   try {
     const res = await api.post('/posts', formData);
 
@@ -144,10 +138,7 @@ export const getPost = (id) => async (dispatch) => {
 // Add comment on post____________________________________________________________________________
 export const addComment = (postId, formData) => async (dispatch) => {
   try {
-    const res = await api.post(
-      `/posts/comment/${postId}`,
-      formData,
-    );
+    const res = await api.post(`/posts/comment/${postId}`, formData);
 
     dispatch({
       type: ADD_COMMENT,
@@ -169,7 +160,7 @@ export const addComment = (postId, formData) => async (dispatch) => {
 // Delete comment on post____________________________________________________________________________
 export const deleteComment = (postId, commentId) => async (dispatch) => {
   try {
-     await api.delete(`/posts/comment/${postId}/${commentId}`);
+    await api.delete(`/posts/comment/${postId}/${commentId}`);
 
     dispatch({
       type: REMOVE_COMMENT,

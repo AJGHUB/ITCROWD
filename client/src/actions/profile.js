@@ -9,6 +9,7 @@ import {
   CLEAR_PROFILE,
   ACCOUNT_DELETED,
   GET_REPOS,
+  NO_REPOS,
 } from './types';
 
 //Get current users profile________________________________________________________
@@ -28,17 +29,65 @@ export const getCurrentProfile = () => async (dispatch) => {
   }
 };
 
+//Get all profiles
+export const getProfiles = () => async (dispatch) => {
+  dispatch({ type: CLEAR_PROFILE });
+
+  try {
+    const res = await api.get('/profile');
+
+    dispatch({
+      type: GET_PROFILES,
+      payload: res.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
+
+//Get profile by id
+export const getProfileById = (userId) => async (dispatch) => {
+  try {
+    const res = await api.get(`/profile/user/${userId}`);
+
+    dispatch({
+      type: GET_PROFILE,
+      payload: res.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: PROFILE_ERROR,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
+
+//Get Github Repo's - route on back end returns data as well
+export const getGithubRepos = (username) => async (dispatch) => {
+  try {
+    const res = await api.get(`/profile/github/${username}`);
+
+    dispatch({
+      type: GET_REPOS,
+      payload: res.data,
+    });
+  } catch (err) {
+    dispatch({
+      type: NO_REPOS,
+      payload: { msg: err.response.statusText, status: err.response.status },
+    });
+  }
+};
+
 // Create or update profile____________________________________________________
 export const createProfile = (formData, history, edit = false) => async (
   dispatch
 ) => {
   try {
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-    const res = await api.post('/profile', formData, config);
+    const res = await api.post('/profile', formData);
 
     dispatch({
       type: GET_PROFILE,
@@ -67,13 +116,7 @@ export const createProfile = (formData, history, edit = false) => async (
 //Add Experience_____________________________________________________________________
 export const addExperience = (formData, history) => async (dispatch) => {
   try {
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-
-    const res = await api.put('/profile/experience', formData, config);
+    const res = await api.put('/profile/experience', formData);
 
     dispatch({
       type: UPDATE_PROFILE,
@@ -100,12 +143,7 @@ export const addExperience = (formData, history) => async (dispatch) => {
 //Add Education_______________________________________________________________
 export const addEducation = (formData, history) => async (dispatch) => {
   try {
-    const config = {
-      headers: {
-        'Content-Type': 'application/json',
-      },
-    };
-    const res = await api.put('/profile/education', formData, config);
+    const res = await api.put('/profile/education', formData);
 
     dispatch({
       type: UPDATE_PROFILE,
@@ -171,7 +209,7 @@ export const deleteEducation = (id) => async (dispatch) => {
 
 //Delete account and Profile_______________________________________________________
 
-export const deleteAccount = (id) => async (dispatch) => {
+export const deleteAccount = () => async (dispatch) => {
   if (
     window.confirm(
       'Are you sure you want to delete your account? This can NOT be undone!'
@@ -192,59 +230,5 @@ export const deleteAccount = (id) => async (dispatch) => {
         payload: { msg: err.response.statusText, status: err.response.status },
       });
     }
-  }
-};
-
-//Get all profiles
-export const getProfiles = () => async (dispatch) => {
-  dispatch({ type: CLEAR_PROFILE });
-
-  try {
-    const res = await api.get('/profile');
-
-    dispatch({
-      type: GET_PROFILES,
-      payload: res.data,
-    });
-  } catch (err) {
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
-    });
-  }
-};
-
-//Get Github Repo's - route on back end returns data as well
-export const getGithubRepos = (username) => async (dispatch) => {
-  try {
-    const res = await api.get(`/profile/github/${username}`);
-
-    dispatch({
-      type: GET_REPOS,
-      payload: res.data,
-    });
-  } catch (err) {
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
-    });
-  }
-};
-
-//Get profile by id
-export const getProfileById = (userId) => async (dispatch) => {
-  // dispatch({ type: CLEAR_PROFILE });
-  try {
-    const res = await api.get(`/profile/user/${userId}`);
-
-    dispatch({
-      type: GET_PROFILE,
-      payload: res.data,
-    });
-  } catch (err) {
-    dispatch({
-      type: PROFILE_ERROR,
-      payload: { msg: err.response.statusText, status: err.response.status },
-    });
   }
 };
