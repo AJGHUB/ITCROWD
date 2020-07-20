@@ -23,11 +23,11 @@ const CommentForm = ({ postId, addComment }) => {
           name='text'
           cols='30'
           rows='5'
-          placeholder='Create a post'
+          placeholder='Comment the post'
           value={text}
           onChange={(e) => setText(e.target.value)}
           required
-        ></textarea>
+        />
         <input type='submit' className='btn btn-dark my-1' value='Submit' />
       </form>
     </div>
