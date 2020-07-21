@@ -10,3 +10,5 @@ const NotFound = () => {
     </Fragment>
   );
 };
+
+export default NotFound;
