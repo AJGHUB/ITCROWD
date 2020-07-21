@@ -1,6 +1,7 @@
 const express = require('express');
 const connectDB = require('./config/db');
 const path = require('path');
+
 const app = express(); //initialising express
 
 //Connect Database
@@ -8,11 +9,6 @@ connectDB();
 
 //Init Middleware
 app.use(express.json());
-app.use(
-  express.urlencoded({
-    extended: true,
-  })
-);
 
 //Define Routes
 app.use('/api/users', require('./routes/api/users'));
