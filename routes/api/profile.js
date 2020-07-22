@@ -8,6 +8,7 @@ const { check, validationResult } = require('express-validator');
 const Profile = require('../../models/Profile');
 const User = require('../../models/User');
 const Post = require('../../models/Post');
+const checkObjectId = require('../../middleware/checkObjectId')
 
 //______________________________________________________________________
 // @route   GET api/profile/me
@@ -333,7 +334,7 @@ router.delete('/education/:edu_id', auth, async (req, res) => {
     await foundProfile.save();
     return res.status(200).json(foundProfile);
     } catch (error) {
-      console.error(error):
+      console.error(error)
       return res.status(500).json({ msg: 'Server error'});
     }
   });
