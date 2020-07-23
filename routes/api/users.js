@@ -12,6 +12,7 @@ const User = require('../../models/User');
 // @route   POST api/users
 // @desc    Register User > name email and password
 // @access  Public (no token needed)
+
 router.post(
   '/',
   [
@@ -37,11 +38,13 @@ router.post(
     try {
       // see if user exists if user exists send back an error
       let user = await User.findOne({
-        email,
+        email
       });
 
       if (user) {
-        return res.status(400).json({
+        return res
+        .status(400)
+        .json({
           errors: [
             {
               msg: 'User already exists',
@@ -67,6 +70,7 @@ router.post(
         avatar,
         password,
       });
+      
       //Encrypt password vcrypt & SAVE User
       //use salt to do the hash with using a promise from bcrypt.genSalt using rounds-10 > more is slower
       //async await used for anything that returns a promise (saves .then scenario)

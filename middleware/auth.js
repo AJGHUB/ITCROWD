@@ -22,6 +22,6 @@ module.exports = function (req, res, next) {
     });
   } catch (err) {
     console.error('somethings wrong with auth middleware');
-    res.status(401).json({ msg: 'Token is not valid' });
+    res.status(500).json({ msg: 'Server Error' });
   }
 };
