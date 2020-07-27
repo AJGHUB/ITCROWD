@@ -4,7 +4,6 @@ import PropTypes from 'prop-types';
 import { connect } from 'react-redux';
 import { createProfile, getCurrentProfile } from '../../actions/profile';
 
-
 const initialState = {
   company: '',
   website: '',
@@ -251,7 +250,7 @@ ProfileForm.propTypes = {
 };
 
 const mapStateToProps = (state) => ({
-  profile: PropTypes.object.isRequired,
+  profile: state.profile 
 });
 
 export default connect(mapStateToProps, { createProfile, getCurrentProfile })(
