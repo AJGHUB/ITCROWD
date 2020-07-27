@@ -12,7 +12,7 @@ module.exports = function (req, res, next) {
 
   // Verify token > decoded by jwt to get users profile OR error
   try {
-    jwt.verify(token, config.get(jwtSecret), (error, decoded) => {
+    jwt.verify(token, config.get('jwtSecret'), (error, decoded) => {
       if (error) {
         return res.status(401).json({ msg: 'Token is not valid' });
       } else {
