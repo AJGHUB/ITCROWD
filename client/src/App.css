@@ -19,6 +19,8 @@ body {
   line-height: 1.6;
   background-color: #fff;
   color: #333;
+  background-color: #ffffff;
+  background-image: url("https://www.transparenttextures.com/patterns/diagonales-decalees.png");
 }
 
 a {
@@ -328,6 +330,8 @@ button {
   top: 0;
   border-bottom: solid 1px var(--primary-color);
   opacity: 0.9;
+  background-color: #265788;
+  background-image: url("https://www.transparenttextures.com/patterns/diagmonds.png");
 }
 
 .navbar ul {
