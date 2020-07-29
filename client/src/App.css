@@ -3,7 +3,7 @@
   --primary-color: #1d5f69;
   --dark-color: #0d447a;
   --light-color: #f4f4f4;
-  --danger-color: #dc3545;
+  --danger-color: #851621;
   --success-color: #28a745;
 }
 
@@ -136,6 +136,10 @@ img {
 
 .my-2 {
   margin: 2rem 0;
+  padding-left: 20px;
+  border-radius: .5rem;
+  background-color: #1d5f69e1;
+
 }
 
 .my-3 {
@@ -202,6 +206,7 @@ img {
 .alert-danger {
   background: var(--danger-color);
   color: #fff;
+  border-radius: 10rem;
 }
 
 .btn-success,
@@ -312,10 +317,17 @@ button {
 .table td {
   padding: 1rem;
   text-align: left;
+  border-radius: 1em;
+}
+
+.table td {
+  background-color:  rgba(23, 27, 80, 0.151);
+  color: black;
 }
 
 .table th {
   background: var(--light-color);
+  background-color:  rgba(3, 5, 31, 0.151);
 }
 
 /* Navbar */
