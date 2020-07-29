@@ -57,7 +57,13 @@ const Login = ({ login, isAuthenticated }) => {
       <p className='my-1'>
         Do not have an account yet? <Link to='/register'>Sign Up</Link>
       </p>
+      <div className='gif'> 
+      <iframe 
+       src="https://giphy.com/embed/ghutdpgRkhkxq">
+      </iframe>
+      </div>
     </Fragment>
+    
   );
 };
 
