@@ -27,6 +27,7 @@ const Login = ({ login, isAuthenticated }) => {
   }
   return (
     <Fragment>
+    <>
       <h1 className='large text-primary'> Welcome Back to The IT Crowd</h1>
       <p className='lead'>
         <i className='fas fa-user'></i> Sign Into Your Developers Account
@@ -65,6 +66,7 @@ const Login = ({ login, isAuthenticated }) => {
        >
       </iframe>
       </div>
+      </>
     </Fragment>
     
   );
