@@ -60,7 +60,9 @@ const Login = ({ login, isAuthenticated }) => {
       <div className='gif'> 
       <iframe 
        title="Intentionally blank"
-       src="https://giphy.com/embed/ghutdpgRkhkxq">
+       src="https://giphy.com/embed/ghutdpgRkhkxq"
+       aria-hidden="true"
+       >
       </iframe>
       </div>
     </Fragment>
