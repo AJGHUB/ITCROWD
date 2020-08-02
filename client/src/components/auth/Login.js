@@ -59,6 +59,7 @@ const Login = ({ login, isAuthenticated }) => {
       </p>
       <div className='gif'> 
       <iframe 
+       title="Intentionally blank"
        src="https://giphy.com/embed/ghutdpgRkhkxq">
       </iframe>
       </div>
@@ -69,7 +70,7 @@ const Login = ({ login, isAuthenticated }) => {
 
 Login.propTypes = {
   login: PropTypes.func.isRequired,
-  isAuthenticated: PropTypes.bool,
+  isAuthenticated: PropTypes.bool
 };
 
 const mapStateToProps = (state) => ({
