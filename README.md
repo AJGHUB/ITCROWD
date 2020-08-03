@@ -1,6 +1,8 @@
 # ITCROWD
 
 AJowsey Notes:
+
+Udemy MERN stack front to back Full Stack React, Redux & Node.js
 See github.com/bradtraversy/devconnector_2.0 for update information
 Mongo DB Atlas https://cloud.mongodb.com/v2/5ed32eea3721a97a5646d908#clusters > 12345alcattraz@gmail.com 
 Postman
@@ -44,6 +46,7 @@ Connect in Mongoose connections to DB in db.js
    Get/Create/Update/Get all/Delete
 10. Post API Routes > Create/Add/Get/Delete/Post/Like-Unlike/Add remove comment.
 
+Build Order
 FRONT END
 
 In pkg json Add: "client": "npm start --prefix client",
@@ -56,3 +59,28 @@ Removed files logo | service worker |css
 1. Front End Start: React & concurrently set up with. Clean up of components. React router set up. Register Form and use state hook. Request example and login Form.
 2. Redux Setup & Alerts Create Store |Alert Reducer with Actions & Types |Alert component & Action Call.
 3. React User Authentication: Auth Reducer & Register Action
+4. Dashboard & Profile Management: Routes | call Profile Action & component | Edit Profile | List & Delete Eduction and Experience Accounts
+5. Profile Display: Profile actions Reducers and Display | Profile-Top Profile-About components | Education & Experience display | Github Repos Display | Profile state |
+6. Posts & comments: Post Reducer Action component | Adding Deleting Posts | Like & unlike Functionality | Post display | Comment display/delete
+
+Test site functionality and bugs
+Heroku Deploy
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
