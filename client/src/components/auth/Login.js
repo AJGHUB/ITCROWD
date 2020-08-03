@@ -59,12 +59,12 @@ const Login = ({ login, isAuthenticated }) => {
         Do not have an account yet? <Link to='/register'>Sign Up</Link>
       </p>
       <div className='gif'> 
-      <iframe 
+      {/* <iframe 
        title="Intentionally blank"
        src="https://giphy.com/embed/ghutdpgRkhkxq"
        aria-hidden="true"
        >
-      </iframe>
+      </iframe> */}
       </div>
       </>
     </Fragment>

@@ -331,13 +331,13 @@ button {
 }
 
 .table td {
-  background-color: #52A8B4;
+  background-color: #acb1c091;
   color: black;
 }
 
 .table th {
   background: var(--light-color);
-  background-color: #2c3757dc;
+  background-color: #b7cccf;
   color: #0a1330;
 }
 
