@@ -61,7 +61,7 @@ Removed files logo | service worker |css
 3. React User Authentication: Auth Reducer & Register Action
 4. Dashboard & Profile Management: Routes | call Profile Action & component | Edit Profile | List & Delete Eduction and Experience Accounts
 5. Profile Display: Profile actions Reducers and Display | Profile-Top Profile-About components | Education & Experience display | Github Repos Display | Profile state |
-6. Posts & comments: Post Reducer Action component | Adding Deleting Posts | Like & unlike Functionality | Post display | Comment display/delete
+6. Posts & comments: Post Reducer Action component | Adding Deleting Posts | Like & unlike Functionality | Post display | Comment display/delete |  npm install normalize
 
 Test site functionality and bugs
 Heroku Deploy
