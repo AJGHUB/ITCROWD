@@ -1,6 +1,7 @@
 # ITCROWD
 
-Udemy MERN stack front to back Full Stack React, Redux & Node.js
+This application's purpose is to connect and promote Developers, they can build a profile and post and share ideas.
+A MERN stack front to back Full Stack React, Redux & Node.js
 I have created an extensive backend API with Express
 Using Stateless JWT authentication practices
 I have integrated React with an Express backend in an elegant way
@@ -8,9 +9,6 @@ With React Hooks, Async/Await & modern practices
 Using Redux for state management
 Deployed finally to Heroku with a postbuild script.
 
-See github.com/bradtraversy/devconnector_2.0 for update information
-Mongo DB Atlas https://cloud.mongodb.com/v2/5ed32eea3721a97a5646d908#clusters > 12345alcattraz@gmail.com 
-Postman
 
 
 AJOWSEY BUILD NOTES 
@@ -73,9 +71,9 @@ Removed files logo | service worker |css
 Test site functionality and bugs
 Heroku Deploy
 
-
-
-
+See github.com/bradtraversy/devconnector_2.0 for update information
+Mongo DB Atlas https://cloud.mongodb.com/v2/5ed32eea3721a97a5646d908#clusters > 12345alcattraz@gmail.com 
+Postman
 
 
 
